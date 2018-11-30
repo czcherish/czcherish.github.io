@@ -1,0 +1,30 @@
+.navBar{
+	width:800px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+.imgBar{
+	width: 4000px;
+	height:400px
+}
+.imgBar img{
+	width: 800px;
+	height: 400px;
+	float: left;
+}
+.img_num {
+	display: inline-block;
+	position: absolute;
+	bottom: 10px;
+	left: 350px;
+}
+.img_num li{
+	display: inline-block;
+	width: 20px;
+	height: 10px;
+	background-color: #fff;
+}
+.img_num li.active{
+	background-color: orange;
+}
