@@ -1,9 +1,29 @@
-var img_box_a = document.getElementsByClassName('img_box')[0].getElementsByTagName('a');
-var navBar_title_li = document.getElementsByClassName('navBar_title')[0].getElementsByTagName('li');
-var img_box_a = document.getElementsByClassName('img_box')[0].getElementsByTagName('a');
-var img_num_li = document.getElementsByClassName('img_num')[0].getElementsByTagName('li');
+var img_box_a = document.getElementsByClassName('img_box','div')[0].getElementsByTagName('a');
+var navBar_title_li = document.getElementsByClassName('navBar_title','ul')[0].getElementsByTagName('li');
+var img_box_a = document.getElementsByClassName('img_box','div')[0].getElementsByTagName('a');
+var img_num_li = document.getElementsByClassName('img_num','ul')[0].getElementsByTagName('li');
 var poImg = document.getElementsByClassName('poImg')[0];
 var count = 0;//定义全局变量同时控制图片和按钮的显示序号
+document.getElementsByTagName('body')[0].style.zoom=0.8;
+
+//解决IE浏览器不支持获取ClassName
+if (!document.getElementsByClassName) {
+    document.getElementsByClassName = function (className, element) {
+        var children = (element || document).getElementsByTagName('*');
+        var elements = new Array();
+        for (var i = 0; i < children.length; i++) {
+            var child = children[i];
+            var classNames = child.className.split(' ');
+            for (var j = 0; j < classNames.length; j++) {
+                if (classNames[j] == className) {
+                    elements.push(child);
+                    break;
+                }
+            }
+        }
+        return elements;
+    };
+}
 
 //显示微信二维码
 navBar_title_li[navBar_title_li.length - 1].onmouseenter = function(){
