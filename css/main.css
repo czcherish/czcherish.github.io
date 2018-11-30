@@ -1,23 +1,173 @@
+body{
+	min-width: 1400px;
+}
+/*导航栏*/
+.layout{
+	/*background-color: #24292e;*/
+	background-color: #373277;
+}
 .navBar{
-	width:800px;
+	width: 1400px;
+	height: 32px;
 	margin: 0 auto;
-	overflow: hidden;
+	padding: 10px 0;
+}
+.homepage{
+	height: 32px;
+	line-height: 32px;
+	padding-left: 10px;
+}
+.homepage a{
+	color: #fff;
+	font-size: 30px;
+	text-decoration: none;
+}
+.navBar_title{
+	display: inline-block;
+	line-height: 32px;
+	padding-left: 80px;
+}
+.navBar_title li{
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+}
+.navBar_title li a{
+	color: #fff;
+	font-weight: bold;
+}
+.navBar_title li:hover{
+	background-color: #fff;
+	-webkit-border-radius: 50%;
+    /**兼容苹果；谷歌，等一些浏览器认*/
+    -moz-border-radius: 50%;
+    /**兼容火狐浏览器*/
+    -o-border-radius: 50%;
+    /**兼容opera浏览器*/
+    border-radius: 50%;
+}
+.navBar_title li:hover a{
+	color: #000;
+}
+.navBar_title li:last-child{
+	width: 80px;
 	position: relative;
 }
-.imgBar{
-	width: 4000px;
-	height:400px
+.navBar_title li img{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 42px;
+	z-index: 10;
 }
-.imgBar img{
+.navBar_foot{
+	line-height: 32px;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+}
+/*欢迎页*/
+.welcome{
+	height: 50px;
+	line-height: 30px;
+	background-color: #e3e3e3;
+	text-align: center;
+}
+.welcome span{
+	color: #ff0000;
+}
+.welcome p{
+	font-size: 12px;
+	line-height: 20px;
+}
+/*轮播*/
+.carousel{
+	width: 1400px;
+	height: 510px;
+	margin: 0 auto;
+	position: relative;
+}
+.carousel_text{
+	width: 500px;
+	height: 450px;
+	padding-top: 60px;
+	position: absolute;
+	left: 10px;
+	top: 0;
+	text-align: center;
+	color: #fff;
+}
+.carousel_text p{
+	line-height: 28px;
+}
+.heart_box{
+	width: 500px;
+    margin: 100px auto;
+    position: relative;
+}
+.heart{
+	margin: 0 auto;
+	position: relative;
+	width: 100px;
+	height: 100px;
+	background-color: #f70e0e;
+	-webkit-transform: rotate(45deg);
+	/* Safari 和 Chrome */
+	-moz-transform: rotate(45deg);
+	/* Firefox */
+	-ms-transform: rotate(45deg);
+	/* IE 9 */
+	-o-transform: rotate(45deg);
+	/* Opera */
+	transform: rotate(45deg);
+}
+.heart:before,
+.heart:after{
+	position: absolute;
+    content: '';
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50%;
+    /**兼容苹果；谷歌，等一些浏览器认*/
+    -moz-border-radius: 50%;
+    /**兼容火狐浏览器*/
+    -o-border-radius: 50%;
+    /**兼容opera浏览器*/
+    border-radius: 50%;
+    background-color: #f70e0e;
+}
+.heart:before{
+	left: -45px;
+}
+.heart:after{
+	top: -45px;
+	left: -0px;
+}
+.carousel_img{
+	width: 800px;
+	overflow: hidden;
+	position: absolute;
+	right: 10px;
+	top: 40px;
+}
+.poImg{
+	width: 4000px;
+	position: relative;
+}
+.img_box{
+	width: 4000px;
+	height: 400px;
+}
+.img_box img{
 	width: 800px;
 	height: 400px;
 	float: left;
 }
-.img_num {
+.img_num{
 	display: inline-block;
 	position: absolute;
-	bottom: 10px;
-	left: 350px;
+	bottom: 5px;
+	left: 360px;
 }
 .img_num li{
 	display: inline-block;
@@ -25,6 +175,88 @@
 	height: 10px;
 	background-color: #fff;
 }
-.img_num li.active{
+.img_num .active{
 	background-color: orange;
+}
+/*正文介绍*/
+.introduction{
+	background-color: #f5f5f5;
+}
+.intro_title{
+	width: 1400px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.intro_title span{
+	display: inline-block;
+	width:auto;
+	height: 35px;
+	line-height: 35px;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: "Microsoft YaHei","微软雅黑";
+	background: url(../images/icon.gif) left center no-repeat;
+	padding-left: 40px;
+	border-bottom: 2px solid orange;
+}
+.poem_text{
+	/*width: 1000px;
+	height: 400px;*/
+}
+.intro_body{
+	padding: 80px 90px 0;
+}
+.intro_body dl{
+	line-height: 30px;
+}
+.poem_textI,.poem_textD{
+	font-size: 24px;
+}
+.poem_textI{
+	font-weight: bold;
+}
+.intro_body p{
+	font-size: 26px;
+	line-height: 36px;
+}
+.heHua{
+	width: 1000px;
+	height: 400px;
+	background: url(../images/荷花.png) 100px center no-repeat;
+	padding-left: 400px;
+}
+.chunWang{
+	width: 900px;
+	height: 400px;
+	background: url(../images/春望.jpg) 990px center no-repeat;
+	background-size: 280px 350px; 
+	padding-right: 500px;
+}
+.diaoLong{
+	width: 1000px;
+	height: 400px;
+	background: url(../images/diaoLong.jpg) 100px center no-repeat;
+	background-size: 230px 350px; 
+	padding-left: 400px;
+}
+.mrMao{
+	width: 800px;
+	height: 400px;
+	background: url(../images/mrMao.png) 900px center no-repeat;
+	background-size: 450px 320px; 
+	padding-right: 600px;
+}
+/*底部*/
+.footer{
+	height: 70px;
+	background-color: #333;
+	margin-top: 10px;
+}
+.footer_wid{
+	width: 1400px;
+	margin: 0 auto;
+	font-size: 20px;
+	font-family: Arial;
+	text-align: center;
+	line-height: 70px;
 }

@@ -1,4 +1,4 @@
-body, h1, h2, h3, h4, h5, h6, hr, p, dl, dt, dd, ul, ol, li, form, fieldset, button, input, textarea, th, td 
+body, h1, h2, h3, h4, h5, h6, hr, p,  dl, dt, dd, ul, ol, li, form, fieldset, button, input, textarea, th, td 
 { 
     margin:0; 
     padding:0; 
@@ -10,17 +10,19 @@ ul, ol
 a 
 { 
     text-decoration:none; 
+    cursor: pointer;
 }
 a:hover{ 
     text-decoration:underline; 
 }
-img{
-	border: none;
-}
 /*清除浮动*/
-.clearfix{
+.clearfix:after{
+	display: block;
     content: "";
     clear: both;
+}
+.clerafix{
+	zoom:1;
 }
 /*浮动*/
 .fl{

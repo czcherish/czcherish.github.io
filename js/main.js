@@ -1,54 +1,67 @@
-window.onload = function(){
-	var navBar = document.getElementsByClassName('navBar');
-	var imgBar = document.getElementById('imgBar');
-	var disImg = imgBar.getElementsByTagName('a');
-	var img_num_li = document.getElementsByClassName('img_num')[0].getElementsByTagName('li');
-	var count = 0;//全局变量 控制小方点和图片的序号 实现动态改变图片和小方点的序号
+var img_box_a = document.getElementsByClassName('img_box')[0].getElementsByTagName('a');
+var navBar_title_li = document.getElementsByClassName('navBar_title')[0].getElementsByTagName('li');
+var img_box_a = document.getElementsByClassName('img_box')[0].getElementsByTagName('a');
+var img_num_li = document.getElementsByClassName('img_num')[0].getElementsByTagName('li');
+var poImg = document.getElementsByClassName('poImg')[0];
+var count = 0;//定义全局变量同时控制图片和按钮的显示序号
 
-	for(var i =0;i < 5;i++)//点击小方点控制图片位置
-	{
-		img_num_li[i].index = i;
-		img_num_li[i].onclick = function(){
-			var clearActive = document.getElementsByClassName('active');
-			count = this.index;
-			for(var j = 0;j < 5;j++)
-			{
-				disImg[j].style.display = 'none';
-			}
-			disImg[this.index].style.display = 'block';
-			buttonsShow();
-		}
-	}
-
-	function buttonsShow() {//设置小方点样式
-                //将之前的小圆点的样式清除
-                for (var i = 0; i < img_num_li.length; i++) {
-                    if (img_num_li[i].className == "active") {
-                        img_num_li[i].className = "";
-                    }
-                }
-                //数组从0开始
-                img_num_li[count].className = "active";
-            }
-
-	var timer;//计时器
-	function play(){//轮播图片
-		timer = setInterval(function(){
-			disImg[count++].style.display = 'none';
-			if(count == 5)
-			{
-				count = 0;
-			}
-			buttonsShow();
-			disImg[count].style.display = 'block';
-		},1500);
-	}
-
-	function stop() {//停止轮播
-		clearInterval(timer);
-	}
-
-	play();
-	navBar[0].onmouseenter = stop;
-	navBar[0].onmouseleave = play;	 
+//显示微信二维码
+navBar_title_li[navBar_title_li.length - 1].onmouseenter = function(){
+	var WX = document.getElementById('WX');
+	WX.style.display = 'block';
 }
+navBar_title_li[navBar_title_li.length - 1].onmouseleave = function(){
+	var WX = document.getElementById('WX');
+	WX.style.display = 'none';
+}
+
+//设置按钮显示样式
+function btnShow() {
+	for(var i = 0;i < img_num_li.length;i++)
+	{
+		img_num_li[i].className = '';
+	}
+	img_num_li[count].className = 'active';
+}
+
+//设置图片显示
+function imgPlay(){
+	for(var i = 0;i < img_box_a.length;i++)
+	{
+		img_box_a[i].style.display = 'none';
+	}
+	img_box_a[count].style.display = 'block';
+}
+
+//点击按钮显示图片
+for (var i = 0;i < img_num_li.length;i++) {
+	img_num_li[i].index = i;
+	img_num_li[i].onclick = function(){
+		count = this.index;
+		btnShow();
+		imgPlay();
+	}
+}
+
+//轮播图片
+var timer;
+function startCarousel(){
+	timer = setInterval(function function_name() {
+		img_num_li[count].className = '';
+		img_box_a[count++].style.display = 'none';
+		if (count == 5) 
+		{
+			count = 0;
+		}
+		img_num_li[count].className = 'active';
+		img_box_a[count].style.display = 'block';
+	},2000)
+}
+
+function stopCarousel(){
+	clearInterval(timer);
+}
+
+startCarousel();
+poImg.onmouseenter =  stopCarousel;
+poImg.onmouseleave = startCarousel;
